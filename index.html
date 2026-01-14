@@ -5,10 +5,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Секретный альбом</title>
   <style>
-    body { display: flex; justify-content: center; align-items: center; height: 100vh; background: #000; margin: 0; font-family: sans-serif; }
-    #login { display: flex; flex-direction: column; align-items: center; }
-    input { padding: 10px; font-size: 18px; margin-bottom: 10px; border-radius: 5px; border: none; width: 200px; text-align: center; }
-    button { padding: 10px 20px; font-size: 18px; border-radius: 5px; border: none; cursor: pointer; background: #fff; }
+    body { 
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+      height: 100vh; 
+      margin: 0; 
+      font-family: sans-serif;
+      
+      background-color: #ffffff; 
+    
+      background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 3.22l-.61-.6a5.5 5.5 0 0 0-7.78 7.77L10 18.78l8.39-8.4a5.5 5.5 0 0 0-7.78-7.77l-.61.61z' fill='%23ffb6c1' fill-opacity='0.4'/%3E%3C/svg%3E");
+    }
+
+    #login { 
+      display: flex; 
+      flex-direction: column; 
+      align-items: center; 
+      background: rgba(255, 255, 255, 0.9); 
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    input { 
+      padding: 10px; 
+      font-size: 18px; 
+      margin-bottom: 10px; 
+      border-radius: 5px; 
+      border: 1px solid #ffb6c1; 
+      width: 200px; 
+      text-align: center; 
+      background: #fff;
+      color: #333;
+    }
+
+    button { 
+      padding: 10px 20px; 
+      font-size: 18px; 
+      border-radius: 5px; 
+      border: none; 
+      cursor: pointer; 
+      background: #ff6b81; 
+      color: white; 
+      transition: background 0.3s;
+    }
+    
+    button:hover {
+      background: #ff4757;
+    }
   </style>
 </head>
 <body>
@@ -17,8 +62,9 @@
     <button onclick="checkPassword()">Открыть</button>
   </div>
   <script>
-    const correctPassword = "0105"; // 
-    const albumLink = "https://photos.app.goo.gl/Jv3UK8GNFwTayKij7"; 
+    const correctPassword = "0105";
+    const albumLink = "https://photos.app.goo.gl/Jv3UK8GNFwTayKij7";
+    
     function checkPassword() {
       const entered = document.getElementById("pass").value;
       if (entered === correctPassword) {
